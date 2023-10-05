@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types';
 import { HiStar, HiOutlineStar, HiEye, HiOutlineBookmark, HiOutlineShare } from "react-icons/hi";
+import { Link } from 'react-router-dom';
 
 
 const News = ({ news }) => {
 
-    const { author, title, image_url, details, rating, total_view } = news;
+    const { _id, author, title, image_url, details, rating, total_view } = news;
     const { img, name, published_date } = author || {};
     const { number } = rating || {};
 
@@ -37,7 +38,17 @@ const News = ({ news }) => {
             <div className='p-4'>
                 <h2 className="text-2xl font-bold mb-4">{title}</h2>
                 <img src={image_url} alt={`Thumbnail image of ${title}`} className='w-full' />
-                <p className='pt-4 text-gray-500 text-justify'>{details.length > 512 ? details.slice(0, 450) + "...Read More" : details}</p>
+                <p
+                    className='pt-4 text-gray-500 text-justify me-2'>
+                    {
+                        details.length > 512 ?
+                            details.slice(0, 450) + "..." :
+                            details
+                    }
+                    <Link to={`/newsDetails/${_id}`}>
+                        <button className='text-lg font-semibold text-red-400'>Read More</button>
+                    </Link>
+                </p>
                 <hr className='my-3 border-gray-300' />
                 <div className='flex justify-between'>
                     <div className='flex items-center gap-x-2'>
@@ -48,7 +59,7 @@ const News = ({ news }) => {
                     </div>
                     <div className='flex items-center gap-x-2'>
                         <HiEye></HiEye>
-                        <p>{total_view || 0}</p>
+                        <p>{total_view ? total_view + "k" : 0}</p>
                     </div>
                 </div>
             </div>

@@ -7,8 +7,8 @@ const Register = () => {
         <section className="container mx-auto">
             <NavBar />
             <div className="min-h-[calc(100vh-150px)] flex justify-center items-center">
-                <div className="bg-gray-100 w-5/12 p-20 rounded-lg">
-                    <h2 className="text-3xl text-center pb-20 font-semibold">Register an account</h2>
+                <div className="bg-gray-100 w-5/12 p-10 rounded-lg">
+                    <h2 className="text-3xl text-center pb-10 font-semibold">Register an account</h2>
                     <form>
                         <div className="flex flex-col gap-y-2">
                             <label
@@ -21,7 +21,7 @@ const Register = () => {
                                 placeholder="Enter your name"
                                 className="px-6 py-3 rounded" />
                         </div>
-                        <div className="flex flex-col mt-4 gap-y-2">
+                        <div className="flex flex-col mt-6 gap-y-2">
                             <label
                                 className="font-bold"
                                 htmlFor="photoURL">Photo URL</label>
@@ -32,7 +32,7 @@ const Register = () => {
                                 placeholder="Enter your profile image link"
                                 className="px-6 py-3 rounded" />
                         </div>
-                        <div className="flex flex-col mt-4 gap-y-2">
+                        <div className="flex flex-col mt-6 gap-y-2">
                             <label
                                 className="font-bold"
                                 htmlFor="email">Email Address</label>
@@ -43,7 +43,7 @@ const Register = () => {
                                 placeholder="Enter your email address"
                                 className="px-6 py-3 rounded" />
                         </div>
-                        <div className="flex flex-col mt-4 gap-y-2">
+                        <div className="flex flex-col mt-6 gap-y-2">
                             <label
                                 className="font-bold"
                                 htmlFor="password">Password</label>
