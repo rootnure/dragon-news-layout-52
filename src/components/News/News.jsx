@@ -59,7 +59,7 @@ const News = ({ news }) => {
                     </div>
                     <div className='flex items-center gap-x-2'>
                         <HiEye></HiEye>
-                        <p>{total_view ? total_view + "k" : 0}</p>
+                        <p>{total_view ? total_view + "k" : 946}</p>
                     </div>
                 </div>
             </div>
