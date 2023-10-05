@@ -12,7 +12,7 @@ const Home = () => {
             <Header></Header>
             <MarqueeComp></MarqueeComp>
             <NavBar></NavBar>
-            <div className="grid grid-cols-5 gap-x-8">
+            <div className="grid grid-cols-5 gap-x-8 mt-12">
                 <LeftNavigation></LeftNavigation>
                 <AllNews></AllNews>
                 <RightNavigation></RightNavigation>

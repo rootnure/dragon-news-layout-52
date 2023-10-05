@@ -15,7 +15,7 @@ const LeftNavigation = () => {
 
     return (
         <aside className="">
-            <h3 className="text-xl font-semibold">All Category</h3>
+            <h3 className="text-2xl font-semibold">All Category</h3>
             <ul className="space-y-2 mt-6 font-semibold text-gray-400 text-lg">
                 {
                     categories.map(category => <li key={category.id}>
