@@ -1,6 +1,9 @@
+import AllNews from "../../components/AllNews/AllNews";
 import Header from "../../components/Header/Header";
+import LeftNavigation from "../../components/LeftNavigation/LeftNavigation";
 import MarqueeComp from "../../components/MarqueeComp/MarqueeComp";
 import NavBar from "../../components/NavBar/NavBar";
+import RightNavigation from "../../components/RightNavigation/RightNavigation";
 
 
 const Home = () => {
@@ -9,7 +12,11 @@ const Home = () => {
             <Header></Header>
             <MarqueeComp></MarqueeComp>
             <NavBar></NavBar>
-            <p className="text-3xl">Home Page</p>
+            <div className="grid grid-cols-5 gap-x-8">
+                <LeftNavigation></LeftNavigation>
+                <AllNews></AllNews>
+                <RightNavigation></RightNavigation>
+            </div>
         </div>
     );
 };
