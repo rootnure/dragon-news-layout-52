@@ -11,6 +11,9 @@ const MarqueeComp = () => {
                 className=""
                 pauseOnHover={true}
                 pauseOnClick={false}
+                gradient={true}
+                gradientWidth={350}
+                gradientColor="#0000003B"
                 speed={75}>
                 <p className="font-semibold me-4">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
                 <p className="font-semibold me-4">Lorem ipsum dolor sit amet consectetur adipisicing.</p>

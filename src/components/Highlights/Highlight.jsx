@@ -2,9 +2,9 @@ import PropTypes from 'prop-types';
 import { BsCalendar4 } from 'react-icons/Bs';
 
 
-const Highlight = ({ news }) => {
+const Highlight = ({ highlight }) => {
 
-    const { img, title, type, publish_date } = news;
+    const { img, title, type, publish_date } = highlight;
 
     return (
         <div className='space-y-6 cursor-pointer hover:scale-105 duration-100'>
@@ -26,7 +26,7 @@ const Highlight = ({ news }) => {
 };
 
 Highlight.propTypes = {
-    news: PropTypes.object.isRequired
+    highlight: PropTypes.object.isRequired
 }
 
 export default Highlight;

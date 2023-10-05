@@ -40,8 +40,8 @@ const RightNavigation = () => {
                 <img src="https://i.ibb.co/6WzyqD4/qZone3.png" alt="Q-Zone image Play Ground" />
             </div>
 
-            <div className="advertisement h-[720px] bg-purple-950 mt-8">
-
+            <div className="advertisement min-h-[500px] bg-purple-950 mt-8">
+                {/* advertisement here */}
             </div>
         </aside>
     );
