@@ -23,7 +23,7 @@ const NewsDetails = () => {
                     <div>
                         <h3 className="text-2xl font-semibold mb-6">Dragon News</h3>
                         <div className='border p-6 space-y-6'>
-                            <img src={image_url} alt={`News thumbnail of ${title}`} />
+                            <img src={image_url} alt={`News thumbnail of ${title}`} className='w-full' />
                             <h3 className="text-3xl font-bold">{title}</h3>
                             <p className='text-gray-600'>{details}</p>
                             <Link to="/" className='block mt-4'>

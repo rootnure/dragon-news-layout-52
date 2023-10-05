@@ -1,4 +1,5 @@
 import Marquee from "react-fast-marquee";
+import { Link } from "react-router-dom";
 
 
 const MarqueeComp = () => {
@@ -9,18 +10,17 @@ const MarqueeComp = () => {
             </div>
             <Marquee
                 className=""
-                pauseOnHover={true}
+                pauseOnHover={false}
                 pauseOnClick={false}
                 gradient={true}
                 gradientWidth={350}
                 gradientColor="#0000003B"
                 speed={75}>
-                <p className="font-semibold me-4">Biden Pledges Nearly $3 Billion To Ukraine In Largest U.S. Military Aid Package Yet.</p>
-                <p className="font-semibold me-4">Tucker Carlson Swears Vladimir Putin Is Winning The War In Ukraine.</p>
-                <p className="font-semibold me-4">Joe Biden announces $3 billion in Ukraine weapons aid.</p>
-                <p className="font-semibold me-4">Tucker Carlson: Putin Winning in Ukraine, Biden Hurting West.</p>
-                <p className="font-semibold me-4">SHAQUILLE O&apos;Neal auctions a 1000 size 22 REEBOKS for $999.32 each!</p>
-                <p className="font-semibold me-4">George Russell wears $110 Daniel Ricciardo merchandise to Zandvoort paddock ahead of Dutch GP</p>
+                <Link to={`/newsDetails/0282e0e58a5c404fbd15261f11c2ab6a`}><p className="font-semibold me-4">Biden Pledges Nearly $3 Billion To Ukraine In Largest U.S. Military Aid Package Yet.</p></Link>
+                <Link to={`/newsDetails/f69a695f037cd9484cecaea37ca71011`}><p className="font-semibold me-4">Tucker Carlson Swears Vladimir Putin Is Winning The War In Ukraine.</p></Link>
+                <Link to={`/newsDetails/11468ed61aee84de492a8b04158a22f9`}><p className="font-semibold me-4">Joe Biden announces $3 billion in Ukraine weapons aid.</p></Link>
+                <Link to={`/newsDetails/f69a695f037cd9484cecaea37ca71011`}><p className="font-semibold me-4">Tucker Carlson: Putin Winning in Ukraine, Biden Hurting West.</p></Link>
+                <Link to={`/newsDetails/e342b6c0c8efc8ca9e811991dc8a7900`}><p className="font-semibold me-4">SHAQUILLE O&apos;Neal auctions a 1000 size 22 REEBOKS for $999.32 each!</p></Link>
             </Marquee>
         </div>
     );

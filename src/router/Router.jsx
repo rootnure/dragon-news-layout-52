@@ -19,12 +19,12 @@ const router = createBrowserRouter([
                 element: <Home />
             },
             {
-                path: "/newsDetails/:id",
+                path: "/newsDetails/:newsId",
                 element: <NewsDetails />,
                 loader: async ({ params }) => {
                     const res = await fetch('/news.json');
                     const allNews = await res.json();
-                    return allNews.find(news => news._id === params.id);
+                    return allNews.find(news => news._id === params.newsId);
                 }
             },
             {
