@@ -1,10 +1,14 @@
 import { Link } from "react-router-dom";
 import NavBar from "../../components/NavBar/NavBar";
+import { Helmet } from "react-helmet-async";
 
 
 const LogIn = () => {
     return (
         <section className="container mx-auto">
+            <Helmet>
+                <title>Login | The Dragon News</title>
+            </Helmet>
             <NavBar />
             <div className="h-[calc(100vh-150px)] flex justify-center items-center">
                 <div className="bg-gray-100 w-5/12 p-10 rounded-lg">

@@ -3,6 +3,7 @@ import Header from '../../components/Header/Header';
 import RightNavigation from '../../components/RightNavigation/RightNavigation';
 import { HiArrowLeft } from "react-icons/hi";
 import Highlights from '../../components/Highlights/Highlights';
+import { Helmet } from 'react-helmet-async';
 
 
 const NewsDetails = () => {
@@ -13,6 +14,9 @@ const NewsDetails = () => {
 
     return (
         <section className="container mx-auto">
+            <Helmet>
+                <title>{title} | The Dragon News</title>
+            </Helmet>
             <Header></Header>
             <div className="grid grid-cols-5 gap-x-8 mt-12">
                 <div className='col-span-4'>
@@ -23,9 +27,11 @@ const NewsDetails = () => {
                             <h3 className="text-3xl font-bold">{title}</h3>
                             <p className='text-gray-600'>{details}</p>
                             <Link to="/" className='block mt-4'>
-                                <button className="text-lg bg-red-600 text-white px-6 py-2 font-semibold flex items-center gap-x-2">
+                                <button
+                                    title="Back to home"
+                                    className="text-lg bg-red-600 hover:bg-red-500 text-white px-6 py-2 font-semibold flex items-center gap-x-2">
                                     <HiArrowLeft></HiArrowLeft>
-                                    <span>All news in this category</span>
+                                    <span>Back to all news</span>
                                 </button>
                             </Link>
                         </div>

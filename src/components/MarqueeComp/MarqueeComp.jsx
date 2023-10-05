@@ -15,10 +15,12 @@ const MarqueeComp = () => {
                 gradientWidth={350}
                 gradientColor="#0000003B"
                 speed={75}>
-                <p className="font-semibold me-4">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-                <p className="font-semibold me-4">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-                <p className="font-semibold me-4">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-                <p className="font-semibold me-4">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                <p className="font-semibold me-4">Biden Pledges Nearly $3 Billion To Ukraine In Largest U.S. Military Aid Package Yet.</p>
+                <p className="font-semibold me-4">Tucker Carlson Swears Vladimir Putin Is Winning The War In Ukraine.</p>
+                <p className="font-semibold me-4">Joe Biden announces $3 billion in Ukraine weapons aid.</p>
+                <p className="font-semibold me-4">Tucker Carlson: Putin Winning in Ukraine, Biden Hurting West.</p>
+                <p className="font-semibold me-4">SHAQUILLE O&apos;Neal auctions a 1000 size 22 REEBOKS for $999.32 each!</p>
+                <p className="font-semibold me-4">George Russell wears $110 Daniel Ricciardo merchandise to Zandvoort paddock ahead of Dutch GP</p>
             </Marquee>
         </div>
     );
