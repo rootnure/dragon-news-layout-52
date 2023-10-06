@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet-async";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import auth from "../../firebase/firebase.config";
+import Logo from "../../components/Logo/Logo";
 
 
 const Register = () => {
@@ -45,6 +46,7 @@ const Register = () => {
             <Helmet>
                 <title>Register | The Dragon News</title>
             </Helmet>
+            <Logo></Logo>
             <NavBar />
             <div className="flex justify-center">
                 <div className="bg-gray-100 w-5/12 p-10 rounded-lg">
@@ -58,6 +60,7 @@ const Register = () => {
                                 type="text"
                                 name="name"
                                 id="name"
+                                required
                                 placeholder="Enter your full name"
                                 className="px-6 py-3 rounded" />
                         </div>
@@ -69,6 +72,7 @@ const Register = () => {
                                 type="text"
                                 name="photoURL"
                                 id="photoURL"
+                                required
                                 placeholder="Enter your profile image link"
                                 className="px-6 py-3 rounded" />
                         </div>
@@ -80,6 +84,7 @@ const Register = () => {
                                 type="email"
                                 name="email"
                                 id="email"
+                                required
                                 placeholder="Enter your email address"
                                 className="px-6 py-3 rounded" />
                         </div>
@@ -91,6 +96,7 @@ const Register = () => {
                                 type="password"
                                 name="password"
                                 id="password"
+                                required
                                 placeholder="Enter your password"
                                 className="px-6 py-3 rounded" />
                         </div>

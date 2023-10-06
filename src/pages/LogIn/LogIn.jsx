@@ -3,6 +3,7 @@ import NavBar from "../../components/NavBar/NavBar";
 import { Helmet } from "react-helmet-async";
 import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
+import Logo from "../../components/Logo/Logo";
 
 
 const LogIn = () => {
@@ -27,6 +28,7 @@ const LogIn = () => {
             <Helmet>
                 <title>Login | The Dragon News</title>
             </Helmet>
+            <Logo></Logo>
             <NavBar />
             <div className="flex justify-center">
                 <div className="bg-gray-100 w-5/12 p-10 rounded-lg">

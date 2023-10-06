@@ -1,6 +1,5 @@
-import { Link } from 'react-router-dom';
-import logo from '/logo.png';
 import moment from 'moment';
+import Logo from '../Logo/Logo';
 
 
 const Header = () => {
@@ -9,8 +8,8 @@ const Header = () => {
     const date = moment().format("MMMM D, YYYY");
 
     return (
-        <header className='flex flex-col items-center gap-y-2.5 py-8'>
-            <Link to="/" title='Home'><img src={logo} alt="Website Logo" className="pb-2.5" /></Link>
+        <header className='flex flex-col items-center gap-y-2.5 pb-8'>
+            <Logo></Logo>
             <p className='text-gray-500'>Journalism Without Fear of Favour</p>
             <h4 className="text-lg text-gray-500"><span className="font-semibold">{day}</span>, {date}</h4>
         </header>
