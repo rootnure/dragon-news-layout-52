@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import NavBar from "../../components/NavBar/NavBar";
 import { Helmet } from "react-helmet-async";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import auth from "../../firebase/firebase.config";
 
@@ -10,22 +10,34 @@ const Register = () => {
 
     const { createUser, updateInfo } = useContext(AuthContext);
 
+    const [isDisabled, setIsDisabled] = useState(true);
+
+    const handleTermsChecked = e => {
+        setIsDisabled(!e.target.checked);
+    }
+
     const handleRegister = e => {
         e.preventDefault();
         const name = e.target.name.value;
         const photoURL = e.target.photoURL.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
+        const isTermsChecked = e.target.terms.checked;
         console.log({ name, photoURL, email, password });
-        createUser(email, password)
-            .then(res => {
-                if (auth.currentUser) {
-                    updateInfo(name, photoURL)
-                        .then(() => console.log('profile updated', res))
-                        .catch(err => console.error(err))
-                }
-            })
-            .catch(err => console.error(err))
+        if (isTermsChecked) {
+            createUser(email, password)
+                .then(res => {
+                    if (auth.currentUser) {
+                        updateInfo(name, photoURL)
+                            .then(() => console.log('profile updated', res))
+                            .catch(err => console.error(err))
+                    }
+                })
+                .catch(err => console.error(err))
+        }
+        else {
+            console.log('terms are not accepted');
+        }
     }
 
     return (
@@ -34,7 +46,7 @@ const Register = () => {
                 <title>Register | The Dragon News</title>
             </Helmet>
             <NavBar />
-            <div className="min-h-[calc(100vh-150px)] flex justify-center items-center">
+            <div className="flex justify-center">
                 <div className="bg-gray-100 w-5/12 p-10 rounded-lg">
                     <h2 className="text-3xl text-center pb-10 font-semibold">Register an account</h2>
                     <form onSubmit={handleRegister}>
@@ -46,7 +58,7 @@ const Register = () => {
                                 type="text"
                                 name="name"
                                 id="name"
-                                placeholder="Enter your name"
+                                placeholder="Enter your full name"
                                 className="px-6 py-3 rounded" />
                         </div>
                         <div className="flex flex-col mt-6 gap-y-2">
@@ -87,15 +99,16 @@ const Register = () => {
                                 type="checkbox"
                                 name="terms"
                                 id="terms"
+                                onChange={handleTermsChecked}
                                 placeholder="Enter your password"
                                 className="px-6 py-3 rounded" />
                             <label
                                 className=" text-sm text-gray-500"
                                 htmlFor="terms">Accept <span className="font-semibold">Term & Conditions</span></label>
                         </div>
-                        <button className="mt-8 p-4 bg-black text-white w-full rounded">Register</button>
-                        <p className="font-semibold text-center mt-8">Already Have An Account? <Link to="/login" className="text-red-500">Login</Link></p>
+                        <button type="submit" className="btn mt-8 p-4 bg-black text-white hover:bg-gray-800 w-full rounded" disabled={isDisabled}>Register</button>
                     </form>
+                    <p className="font-semibold text-center mt-8">Already Have An Account? <Link to="/login" className="text-red-500">Login</Link></p>
                 </div>
             </div>
         </section>

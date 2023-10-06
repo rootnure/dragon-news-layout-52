@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import NavBar from "../../components/NavBar/NavBar";
 import { Helmet } from "react-helmet-async";
 import { useContext } from "react";
@@ -9,11 +9,17 @@ const LogIn = () => {
 
     const { signIn } = useContext(AuthContext);
 
+    const navigate = useNavigate();
+
     const handleLogIn = e => {
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
-        signIn(email, password).then(res => console.log(res)).catch(err => console.error(err))
+        signIn(email, password)
+            .then(() => {
+                navigate("/");
+            })
+            .catch(err => console.error(err))
     }
 
     return (
@@ -22,7 +28,7 @@ const LogIn = () => {
                 <title>Login | The Dragon News</title>
             </Helmet>
             <NavBar />
-            <div className="h-[calc(100vh-150px)] flex justify-center items-center">
+            <div className="flex justify-center">
                 <div className="bg-gray-100 w-5/12 p-10 rounded-lg">
                     <h2 className="text-3xl text-center pb-10 font-semibold">Login to your account</h2>
                     <form onSubmit={handleLogIn}>
@@ -49,8 +55,8 @@ const LogIn = () => {
                                 className="px-6 py-3 rounded" />
                         </div>
                         <button type="submit" className="mt-8 p-4 bg-black text-white w-full rounded">Login</button>
-                        <p className="font-semibold text-center mt-8">Don&apos;t Have An Account? <Link to="/register" className="text-red-500">Register</Link></p>
                     </form>
+                    <p className="font-semibold text-center mt-8">Don&apos;t Have An Account? <Link to="/register" className="text-red-500">Register</Link></p>
                 </div>
             </div>
         </section>

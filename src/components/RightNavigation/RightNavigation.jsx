@@ -1,11 +1,16 @@
+import { useContext } from 'react';
 import { AiOutlineGoogle, AiFillGithub } from 'react-icons/ai';
 import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
+import { AuthContext } from '../../provider/AuthProvider';
 
 
 const RightNavigation = () => {
+
+    const { user } = useContext(AuthContext);
+
     return (
         <aside className="">
-            <div className='space-y-2'>
+            {user && <div className='space-y-2'>
                 <h3 className="text-2xl font-semibold mb-6">Login With</h3>
                 <button className='flex justify-center gap-x-1 p-2 items-center text-blue-600 font-semibold w-full border border-blue-600 rounded'>
                     <AiOutlineGoogle className='text-3xl'></AiOutlineGoogle>
@@ -15,7 +20,7 @@ const RightNavigation = () => {
                     <AiFillGithub className='text-3xl'></AiFillGithub>
                     <p className='text-sm'>Login with Github</p>
                 </button>
-            </div>
+            </div>}
 
             <div className='mt-8'>
                 <h3 className="text-2xl font-semibold mb-6">Find Us On</h3>
