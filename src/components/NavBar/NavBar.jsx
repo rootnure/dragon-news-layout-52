@@ -13,7 +13,7 @@ const NavBar = () => {
     const handleLogOut = () => {
         logOut()
             .then(() => {
-                navigate("/login");
+                navigate("/");
             })
             .catch(err => console.error(err))
     }
@@ -23,8 +23,8 @@ const NavBar = () => {
         {
             user &&
             <>
-                <li><NavLink to="/dashboard">Dashboard</NavLink></li>
                 <li><NavLink to="/bookmarks">Bookmarks</NavLink></li>
+                <li><NavLink to="/dashboard">Dashboard</NavLink></li>
             </>
         }
         <li><NavLink to="/about">About</NavLink></li>

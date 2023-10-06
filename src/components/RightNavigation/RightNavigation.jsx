@@ -10,7 +10,7 @@ const RightNavigation = () => {
 
     return (
         <aside className="">
-            {user && <div className='space-y-2'>
+            {!user && <div className='space-y-2'>
                 <h3 className="text-2xl font-semibold mb-6">Login With</h3>
                 <button className='flex justify-center gap-x-1 p-2 items-center text-blue-600 font-semibold w-full border border-blue-600 rounded'>
                     <AiOutlineGoogle className='text-3xl'></AiOutlineGoogle>
@@ -22,7 +22,7 @@ const RightNavigation = () => {
                 </button>
             </div>}
 
-            <div className='mt-8'>
+            <div className={user || 'mt-8'}>
                 <h3 className="text-2xl font-semibold mb-6">Find Us On</h3>
                 <button className='flex justify-start gap-x-2 px-6 py-2 items-center font-semibold w-full border border-gray-300 rounded-t'>
                     <FaFacebookF className='p-2 bg-gray-100 rounded-full text-4xl text-blue-600'></FaFacebookF>
@@ -45,8 +45,9 @@ const RightNavigation = () => {
                 <img src="https://i.ibb.co/6WzyqD4/qZone3.png" alt="Q-Zone image Play Ground" />
             </div>
 
-            <div className="advertisement min-h-[500px] bg-purple-950 mt-8">
+            <div className="advertisement min-h-[720px] bg-purple-950 mt-8 rounded">
                 {/* advertisement here */}
+                <p>Advertisement</p>
             </div>
         </aside>
     );

@@ -25,7 +25,7 @@ const NewsDetails = () => {
                         <div className='border p-6 space-y-6'>
                             <img src={image_url} alt={`News thumbnail of ${title}`} className='w-full' />
                             <h3 className="text-3xl font-bold">{title}</h3>
-                            <p className='text-gray-600'>{details}</p>
+                            <p className='text-gray-600 text-justify'>{details}</p>
                             <Link to="/" className='block mt-4'>
                                 <button
                                     title="Back to home"
@@ -38,7 +38,9 @@ const NewsDetails = () => {
                     </div>
                     <div>
                         <h3 className="text-2xl font-semibold my-6">Editors Insight</h3>
-                        <Highlights isFlex={true}></Highlights>
+                        <div className='mb-12'>
+                            <Highlights isFlex={true}></Highlights>
+                        </div>
                     </div>
                 </div>
                 <RightNavigation></RightNavigation>
