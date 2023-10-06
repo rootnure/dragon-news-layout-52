@@ -1,7 +1,22 @@
+import { useContext } from 'react';
 import { BiUserCircle } from 'react-icons/bi';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../provider/AuthProvider';
+
 
 const NavBar = () => {
+
+    const { user, logOut } = useContext(AuthContext);
+
+    const navigate = useNavigate();
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => {
+                navigate("/login");
+            })
+            .catch(err => console.error(err))
+    }
 
     const links = <>
         <li><NavLink to="/">Home</NavLink></li>
@@ -27,8 +42,8 @@ const NavBar = () => {
                 </ul>
             </div>
             <div className="navbar-end flex items-center gap-x-2">
-                <BiUserCircle className='text-5xl'></BiUserCircle>
-                <Link className="bg-black hover:bg-gray-600 duration-100 text-white px-6 py-2 font-semibold" to="/login">LogIn</Link>
+                {user?.photoURL ? <img src={user.photoURL} alt={`Profile Image of user ${user?.displayName}`} className='max-h-12 rounded-full' /> : <BiUserCircle className='text-5xl'></BiUserCircle>}
+                {user ? <button onClick={handleLogOut} className="bg-black hover:bg-gray-600 duration-100 text-white px-6 py-2 font-semibold">Sign Out</button> : <Link to="/login"><button className="bg-black hover:bg-gray-600 duration-100 text-white px-6 py-2 font-semibold">LogIn</button></Link>}
             </div>
         </div>
     );

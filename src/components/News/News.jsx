@@ -12,11 +12,11 @@ const News = ({ news }) => {
     let ratingIcons = [];
 
     for (let i = 0; i < parseInt(number); i++) {
-        ratingIcons.push(<HiStar></HiStar>);
+        ratingIcons.push(<HiStar key={ratingIcons.length}></HiStar>);
     }
     if (number < 5) {
         for (let i = 0; i < 5 - ratingIcons.length; i++) {
-            ratingIcons.push(<HiOutlineStar></HiOutlineStar>)
+            ratingIcons.push(<HiOutlineStar key={ratingIcons.length}></HiOutlineStar>)
         }
     }
 

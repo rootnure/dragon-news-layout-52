@@ -1,9 +1,21 @@
 import { Link } from "react-router-dom";
 import NavBar from "../../components/NavBar/NavBar";
 import { Helmet } from "react-helmet-async";
+import { useContext } from "react";
+import { AuthContext } from "../../provider/AuthProvider";
 
 
 const LogIn = () => {
+
+    const { signIn } = useContext(AuthContext);
+
+    const handleLogIn = e => {
+        e.preventDefault();
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        signIn(email, password).then(res => console.log(res)).catch(err => console.error(err))
+    }
+
     return (
         <section className="container mx-auto">
             <Helmet>
@@ -13,7 +25,7 @@ const LogIn = () => {
             <div className="h-[calc(100vh-150px)] flex justify-center items-center">
                 <div className="bg-gray-100 w-5/12 p-10 rounded-lg">
                     <h2 className="text-3xl text-center pb-10 font-semibold">Login to your account</h2>
-                    <form>
+                    <form onSubmit={handleLogIn}>
                         <div className="flex flex-col gap-y-2">
                             <label
                                 className="font-bold"
@@ -36,7 +48,7 @@ const LogIn = () => {
                                 placeholder="Enter your password"
                                 className="px-6 py-3 rounded" />
                         </div>
-                        <button className="mt-8 p-4 bg-black text-white w-full rounded">Login</button>
+                        <button type="submit" className="mt-8 p-4 bg-black text-white w-full rounded">Login</button>
                         <p className="font-semibold text-center mt-8">Don&apos;t Have An Account? <Link to="/register" className="text-red-500">Register</Link></p>
                     </form>
                 </div>
