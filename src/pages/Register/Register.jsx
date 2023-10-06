@@ -4,7 +4,6 @@ import { Helmet } from "react-helmet-async";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import auth from "../../firebase/firebase.config";
-import Logo from "../../components/Logo/Logo";
 
 
 const Register = () => {
@@ -42,11 +41,10 @@ const Register = () => {
     }
 
     return (
-        <section className="container mx-auto">
+        <section className="container mx-auto mb-12">
             <Helmet>
                 <title>Register | The Dragon News</title>
             </Helmet>
-            <Logo></Logo>
             <NavBar />
             <div className="flex justify-center">
                 <div className="bg-gray-100 w-5/12 p-10 rounded-lg">

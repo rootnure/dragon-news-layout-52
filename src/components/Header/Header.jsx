@@ -1,5 +1,4 @@
 import moment from 'moment';
-import Logo from '../Logo/Logo';
 
 
 const Header = () => {
@@ -9,7 +8,6 @@ const Header = () => {
 
     return (
         <header className='flex flex-col items-center gap-y-2.5 pb-8'>
-            <Logo></Logo>
             <p className='text-gray-500'>Journalism Without Fear of Favour</p>
             <h4 className="text-lg text-gray-500"><span className="font-semibold">{day}</span>, {date}</h4>
         </header>

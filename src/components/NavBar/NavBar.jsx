@@ -49,8 +49,16 @@ const NavBar = () => {
                 </ul>
             </div>
             <div className="navbar-end flex items-center gap-x-2">
-                {user?.photoURL ? <img src={user.photoURL} alt={`Profile Image of user ${user?.displayName}`} className='max-h-12 rounded-full' /> : <BiUserCircle className='text-5xl'></BiUserCircle>}
-                {user ? <button onClick={handleLogOut} className="bg-black hover:bg-gray-600 duration-100 text-white px-6 py-2 font-semibold">Sign Out</button> : <Link to="/login"><button className="bg-black hover:bg-gray-600 duration-100 text-white px-6 py-2 font-semibold">LogIn</button></Link>}
+                {
+                    user?.photoURL ?
+                        <Link to="/profile" title="Profile"><img src={user.photoURL} alt={`Profile Image of user ${user?.displayName}`} className='h-11 rounded-full' /></Link> :
+                        <Link to="/register" title='Register/SignUp'><BiUserCircle className='text-5xl'></BiUserCircle></Link>
+                }
+                {
+                    user ?
+                        <button onClick={handleLogOut} className="bg-black hover:bg-gray-600 duration-100 text-white px-6 py-2 font-semibold rounded-md">Sign Out</button> :
+                        <Link to="/login" title="Log In"><button className="bg-black hover:bg-gray-600 duration-100 text-white px-6 py-2 font-semibold rounded-md">LogIn</button></Link>
+                }
             </div>
         </div>
     );
